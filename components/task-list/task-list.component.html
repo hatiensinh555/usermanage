@@ -1,0 +1,99 @@
+<div class="container">
+
+	<div class="row">
+		<div class="col-12">
+
+			<div class="userInfo" *ngIf="user">
+
+				<div class="form-group">
+					<label for="" class="font-weight-bold mb-0">Name:</label>
+					<input type="text" class="form-control" value="" [(ngModel)]="user.name ">
+				</div>
+
+				<div class="form-group">
+					<label for="" class="font-weight-bold mb-0">Code :</label>
+					<input type="text" class="form-control" value="" [(ngModel)]="user.code ">
+				</div>
+				
+				<div class="form-group">
+					<label for="" class="font-weight-bold mb-0">Level :</label>
+					<select class="form-control" [(ngModel)]="user.level">
+						<option value="fresher">Fresher</option>
+						<option value="junior">Junior</option>
+						<option value="senior">Senior</option>
+					</select>
+				</div>
+
+				<button type="button" class="btn btn-default" 
+				(click)="onEditUser(user.id,user.name,user.code,user.level)"
+				><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+
+				<button type="button" class="btn btn-default" 
+				(click)="onDeleteUser(user.id)"
+				><i class="fa fa-times" aria-hidden="true"></i> Delete</button>
+
+			</div>
+
+			<div class="userTask my-5">
+
+				<div class="">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Task</th>
+								<th scope="col">Quest</th>
+								<th scope="col">Submit Date</th>
+								<th scope="col">Dealine</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let task of tasks">
+								<td scope="row"> {{task.taskname | titlecase }} </td>
+								<td class="noPadding" scope="row">
+									<table class="table table-hover tableChild">
+										<tbody>
+											<tr *ngFor="let q of task.quest">
+												<td> {{q.name | titlecase}} </td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+
+								<td class="noPadding" scope="row">
+									<table class="table table-hover tableChild">
+										<tbody>
+											<tr *ngFor="let quest of task.quest">
+												<td *ngIf="task.id == quest.tasklistId"> {{quest.submitdate | date}} </td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+
+								<td class="noPadding" scope="row">
+									<table class="table table-hover tableChild">
+										<tbody>
+											<tr *ngFor="let quest of task.quest">
+												<td *ngIf="task.id == quest.tasklistId"> {{quest.deadline | date}} </td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+			<div class="navBtn">
+				<button type="button" class="btn btn-default" (click)="OnBackList()"
+				><i class="fa fa-reply" aria-hidden="true"></i> Back to List</button>
+			</div>
+
+
+		</div>
+	</div>
+
+</div>

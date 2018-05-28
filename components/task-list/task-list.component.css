@@ -1,0 +1,68 @@
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+a,button{
+    cursor: pointer;
+}
+.container{
+    box-shadow: 1px 1px 5px 5px #d3d3d3;
+}
+
+
+.table{
+    margin-bottom: 0;
+}
+.tableChild tr:first-child>td{
+    border-top: 0;
+}
+.userInfo{
+    margin: 20px 0;
+}
+.userInfo .form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* .userInfo label{
+    border: 1px solid #cc2337;
+    margin-bottom: 0;
+    border-radius: 3px;
+    padding: 5px 10px;
+} */
+.userInfo input, .userInfo select{
+    width: 200px;
+    margin-left: 1%;
+}
+.navBtn{
+    text-align: center;
+    margin: 20px;
+}
+.navBtn>button{
+    background-color: #cc2337;
+    color: #fff;
+}
+.noPadding{
+    padding: 0;
+}
+thead{
+    background-color: #cc2337;
+    color: #fff;
+}
+.table-bordered{
+    border: 2px solid #cc2337;
+    background-color: #fff;
+}
+.colorRed{color: #cc2337}
+
+button{
+    margin-right: 1%;
+    background-color: #fff;
+    color: #cc2337;
+    border-color: #cc2337;
+}
+button:hover,button.actve, button:focus{
+    background-color: #cc2337;
+    color: #fff;
+}
